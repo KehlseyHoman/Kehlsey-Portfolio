@@ -1,0 +1,125 @@
+.project-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.project-card-head h3 {
+  font-size: 1.4rem;
+}
+
+.project-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.project-stat-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+
+.project-stat-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.accent-pink .project-stat-fill { background: var(--pink); }
+.accent-teal .project-stat-fill { background: var(--teal); }
+.accent-lavender .project-stat-fill { background: var(--lavender); }
+
+.project-status-badge {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.project-tagline {
+  font-size: 0.98rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.project-description,
+.project-role {
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.project-role {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.project-stack li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.project-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.project-card-expanded {
+  padding: 36px;
+}
+
+.project-card-expanded h3 {
+  font-size: 1.7rem;
+}

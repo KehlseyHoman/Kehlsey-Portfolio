@@ -1,0 +1,113 @@
+import { useEffect, useMemo, useState } from 'react';
+import './StackMatch.css';
+
+interface CardData {
+  id: number;
+  label: string;
+  pairId: number;
+}
+
+const STACK = ['React', 'Angular', 'TypeScript', 'Java', 'Spring', 'SQL'];
+
+function shuffledDeck(): CardData[] {
+  const deck: CardData[] = STACK.flatMap((label, pairId) => [
+    { id: pairId * 2, label, pairId },
+    { id: pairId * 2 + 1, label, pairId },
+  ]);
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+}
+
+export default function StackMatch() {
+  const [deck, setDeck] = useState<CardData[]>(() => shuffledDeck());
+  const [flipped, setFlipped] = useState<number[]>([]);
+  const [matched, setMatched] = useState<number[]>([]);
+  const [moves, setMoves] = useState(0);
+  const [locked, setLocked] = useState(false);
+
+  const isWon = matched.length === STACK.length;
+
+  useEffect(() => {
+    if (flipped.length !== 2) return;
+    setLocked(true);
+    const [a, b] = flipped;
+    const cardA = deck.find((c) => c.id === a)!;
+    const cardB = deck.find((c) => c.id === b)!;
+    setMoves((m) => m + 1);
+
+    const timeout = setTimeout(() => {
+      if (cardA.pairId === cardB.pairId) {
+        setMatched((prev) => [...prev, cardA.pairId]);
+      }
+      setFlipped([]);
+      setLocked(false);
+    }, 650);
+
+    return () => clearTimeout(timeout);
+  }, [flipped, deck]);
+
+  const handleFlip = (card: CardData) => {
+    if (locked) return;
+    if (flipped.includes(card.id)) return;
+    if (matched.includes(card.pairId)) return;
+    if (flipped.length === 2) return;
+    setFlipped((prev) => [...prev, card.id]);
+  };
+
+  const reset = () => {
+    setDeck(shuffledDeck());
+    setFlipped([]);
+    setMatched([]);
+    setMoves(0);
+    setLocked(false);
+  };
+
+  const statusText = useMemo(() => {
+    if (isWon) return `Matched the whole stack in ${moves} moves.`;
+    return `${matched.length} / ${STACK.length} pairs found · ${moves} moves`;
+  }, [isWon, matched.length, moves]);
+
+  return (
+    <div className="stack-match">
+      <div className="stack-match-head">
+        <div>
+          <h2>Match the stack</h2>
+          <p>A tiny break, built the same way I build everything else.</p>
+        </div>
+        <button className="stack-match-reset" onClick={reset} type="button">
+          Reshuffle
+        </button>
+      </div>
+
+      <div className="stack-match-grid" role="group" aria-label="Memory match game">
+        {deck.map((card) => {
+          const isFlipped = flipped.includes(card.id) || matched.includes(card.pairId);
+          return (
+            <button
+              key={card.id}
+              type="button"
+              className={`stack-card${isFlipped ? ' stack-card-flipped' : ''}${
+                matched.includes(card.pairId) ? ' stack-card-matched' : ''
+              }`}
+              onClick={() => handleFlip(card)}
+              aria-label={isFlipped ? card.label : 'Hidden card'}
+              aria-pressed={isFlipped}
+            >
+              <span className="stack-card-inner">
+                <span className="stack-card-face stack-card-back">?</span>
+                <span className="stack-card-face stack-card-front">{card.label}</span>
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      <p className="stack-match-status" aria-live="polite">
+        {statusText}
+      </p>
+    </div>
+  );
+}

@@ -1,0 +1,126 @@
+.hero {
+  padding: 96px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 720px;
+  position: relative;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.hero-highlight {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  margin-top: 22px;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(240, 168, 198, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(240, 168, 198, 0.55);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--ink);
+}
+
+.featured {
+  padding: 48px 0 80px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: 1.8rem;
+}
+
+.see-all {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.featured-note {
+  margin-top: 32px;
+  font-size: 0.95rem;
+}
+
+.featured-note a {
+  color: var(--pink-deep);
+  font-weight: 600;
+}
+
+.featured-note a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 64px 0 48px; }
+  .hero::before { width: 220px; height: 220px; top: -60px; right: -60px; }
+}
