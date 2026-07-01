@@ -1,14 +1,25 @@
 # Kehlsey Homan — Portfolio
 
-A React + TypeScript + Vite portfolio site, built with React Router (multi-page)
+A React 19 + TypeScript + Vite portfolio site, built with React Router (multi-page)
 and styled with a soft blue/purple/teal/pink design system.
+
+## Pages
+
+- **Home** — hero intro, "Recent builds" (featured apps pulled from `projects.ts`),
+  and an interactive tech stack breakdown
+- **Projects** — full project list, apps and client sites
+- **About** — bio and photos
+- **Contact** — direct links plus a Netlify-powered contact form
 
 ## Structure
 
 - `src/pages/` — Home, Projects, About, Contact
-- `src/components/` — Nav, Footer, ProjectCard (the "stat bar" signature element)
+- `src/components/Nav`, `src/components/Footer` — site chrome
+- `src/components/ProjectCard/` — the "stat bar" signature element used on project cards
+- `src/components/TechFlow/` — interactive, expandable breakdown of core tech (React, Angular,
+  TypeScript, Spring Boot, Java, SQL/PostgreSQL) shown on the Home page
 - `src/data/projects.ts` — edit this file to add/update/remove projects (apps vs. client sites)
-- `src/assets/kehlsey-profile.jpg` — profile photo used on the About page
+- `src/assets/` — profile photo (`kehlsey-profile.jpg`) and About page photos (`assets/about/`)
 - `src/index.css` — design tokens (colors, fonts, spacing) — change these to retheme the whole site
 
 ## Run locally
@@ -20,6 +31,14 @@ npm run dev
 
 Opens at http://localhost:5173
 
+## Build & lint
+
+```bash
+npm run build    # tsc -b && vite build
+npm run lint      # oxlint
+npm run preview   # preview the production build locally
+```
+
 ## Deploy to Netlify
 
 1. Push this folder to a GitHub repo
@@ -28,15 +47,28 @@ Opens at http://localhost:5173
    - Build command: `npm run build`
    - Publish directory: `dist`
 4. Deploy. Netlify will auto-detect the contact form (already wired with
-   `data-netlify="true"` and a hidden static form for build-time detection) —
-   submissions will show up in Site settings → Forms, and can be forwarded to
-   your email from there.
+   `data-netlify="true"`, a honeypot field, and a hidden static input for
+   build-time detection) — submissions will show up in Site settings → Forms,
+   and can be forwarded to your email from there.
 5. Optional: add a custom domain in Site settings → Domain management.
+
+## Current projects
+
+Sourced from `src/data/projects.ts`:
+
+- **Offerwatch** — full-stack SaaS job application tracker (Angular, Spring Boot,
+  PostgreSQL/Supabase, deployed on Railway) — live demo + GitHub linked
+- **Shelved** — native iOS social reading app (SwiftUI, Firebase Auth, AWS
+  Amplify) — learning project, shelved unfinished, GitHub linked
+- **Kitchen Designs by Wendy** — freelance client marketing site (WordPress,
+  Cloudflare, AWS Lightsail)
+- **Twin Bay Stoneworks** — freelance client marketing site (WordPress,
+  Cloudflare, AWS Lightsail)
 
 ## Notes
 
-- The "Shelved" project links to your GitHub profile rather than a specific
-  repo — update `src/data/projects.ts` with the exact repo URL if you want a
-  direct link.
-- Hatchling Fitness isn't listed yet since it's not built or on GitHub —
-  add it to `src/data/projects.ts` once it's live.
+- `src/components/StackMatch/` contains only `.bak` files from an earlier
+  iteration — it isn't imported anywhere and can be deleted if you don't plan
+  to revisit it.
+- Hatchling Fitness isn't listed yet since it's not built or on GitHub — add
+  it to `src/data/projects.ts` once it's live.
