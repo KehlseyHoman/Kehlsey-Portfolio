@@ -1,0 +1,19 @@
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  transition: border-color 0.2s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--pink-deep);
+  color: var(--pink-deep);
+  transform: translateY(-2px);
+}

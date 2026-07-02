@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { RESUME_URL, RESUME_UPDATED } from '../../data/site';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import './Nav.css';
 
 const links = [
@@ -45,6 +46,8 @@ export default function Nav() {
             <span className="nav-resume-label">Resume</span>
             <span className="nav-resume-updated">Updated {RESUME_UPDATED}</span>
           </a>
+
+          <ThemeToggle />
         </div>
       </div>
     </header>

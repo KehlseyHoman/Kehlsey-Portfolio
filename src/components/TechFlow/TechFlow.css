@@ -74,8 +74,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(4px);
   width: 200px;
-  background: var(--ink);
-  color: #fff;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 0.78rem;
@@ -97,7 +99,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-top-color: var(--ink);
+  border-top-color: var(--tooltip-bg);
 }
 
 .tech-pill:hover .tech-pill-note,
