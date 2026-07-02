@@ -14,7 +14,7 @@ const TECH_ITEMS: TechItem[] = [
     key: 'react',
     name: 'React',
     short: 'Dealer-facing dashboards for thousands of users.',
-    full: 'Led homepage feature development on a React application used by thousands of dealership users across the US and Puerto Rico for lease, purchase, and fleet pricing workflows — building a permission-aware dashboard with real-time bundle status tracking and a customized MUI data table supporting filtering by VIN, date range, and status.',
+    full: 'Led homepage feature development on a React application used by thousands of dealership users across the US and Puerto Rico for lease, purchase, and fleet pricing workflows -building a permission-aware dashboard with real-time bundle status tracking and a customized MUI data table supporting filtering by VIN, date range, and status.',
     accent: 'pink',
   },
   {
