@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import TechFlow from '../../components/TechFlow/TechFlow';
+import ImpactStrip from '../../components/ImpactStrip/ImpactStrip';
 import './Home.css';
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
             <Link to="/projects" className="btn btn-primary">See my work</Link>
             <Link to="/contact" className="btn btn-secondary">Get in touch</Link>
           </div>
+
+          <ImpactStrip />
         </div>
       </section>
 

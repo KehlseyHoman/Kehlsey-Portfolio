@@ -1,4 +1,6 @@
 import profileImg from '../../assets/kehlsey-profile.jpg';
+import Timeline from '../../components/Timeline/Timeline';
+import Highlights from '../../components/Highlights/Highlights';
 import './About.css';
 
 export default function About() {
@@ -29,10 +31,15 @@ export default function About() {
           owning architecture on three of six production applications and
           contributing features across the rest, everything from a dealer-facing
           pricing platform used by thousands of users to executive financial
-          dashboards. Before that I worked at Gentex, and I've been freelancing
-          since 2018, building and deploying production sites for small business
-          clients. I hold a B.S. in Computer Science from Grand Valley State
-          University.
+          dashboards. A few of the specifics are below, but the short version is I
+          like owning a feature from architecture through production.
+        </p>
+        <p>
+          Before GM I worked at Gentex, and before that a data analytics
+          internship at Dematic first got me writing production SQL and building
+          dashboards for real stakeholders. I've been freelancing since 2018,
+          building and deploying production sites for small business clients, and
+          I hold a B.S. in Computer Science from Grand Valley State University.
         </p>
         <p>
           Outside of work I'm usually deep in a video game, a fantasy novel, or
@@ -54,6 +61,10 @@ export default function About() {
           <li>SQL</li>
         </ul>
       </div>
+
+      <Highlights />
+
+      <Timeline />
     </section>
   );
 }

@@ -1,3 +1,8 @@
+import offerwatchDashboard from '../assets/projects/offerwatch-dashboard.jpg';
+import offerwatchStats from '../assets/projects/offerwatch-stats.jpg';
+import offerwatchInterviewPrep from '../assets/projects/offerwatch-interview-prep.jpg';
+import offerwatchStories from '../assets/projects/offerwatch-stories.jpg';
+
 export interface Project {
   slug: string;
   name: string;
@@ -11,6 +16,7 @@ export interface Project {
   accent: 'pink' | 'teal' | 'lavender';
   kind: 'app' | 'client';
   status?: string; // optional badge, e.g. "Learning project · In progress"
+  images?: { src: string; alt: string; label: string }[]; // images[0] is the card's hero image
 }
 
 export const projects: Project[] = [
@@ -30,6 +36,12 @@ export const projects: Project[] = [
     ],
     accent: 'teal',
     kind: 'app',
+    images: [
+      { src: offerwatchDashboard, alt: 'Offerwatch dashboard showing job applications grouped by status', label: 'Dashboard' },
+      { src: offerwatchStats, alt: 'Offerwatch analytics page with interview pipeline funnel and application sources', label: 'Analytics' },
+      { src: offerwatchInterviewPrep, alt: 'Offerwatch interview prep page with curated questions and personal notes', label: 'Interview Prep' },
+      { src: offerwatchStories, alt: 'Offerwatch behavioral stories page organized by theme', label: 'Stories' },
+    ],
   },
   {
     slug: 'shelved',

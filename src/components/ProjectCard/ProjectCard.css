@@ -123,3 +123,77 @@
 .project-card-expanded h3 {
   font-size: 1.7rem;
 }
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.project-gallery-single {
+  grid-template-columns: minmax(0, 200px);
+  justify-content: start;
+}
+
+.project-gallery-item {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-alt);
+  cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-gallery-item img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.project-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.project-gallery-caption {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 4px 2px;
+  background: var(--card);
+}
+
+.project-image-expand {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(30, 27, 46, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.project-gallery-item:hover .project-image-expand,
+.project-gallery-item:focus-visible .project-image-expand {
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

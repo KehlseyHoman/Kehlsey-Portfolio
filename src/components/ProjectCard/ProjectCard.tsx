@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import type { Project } from '../../data/projects';
+import Lightbox from '../Lightbox/Lightbox';
 import './ProjectCard.css';
 
 export default function ProjectCard({ project, expanded = false }: { project: Project; expanded?: boolean }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const images = project.images ?? [];
+  const visibleImages = expanded ? images : images.slice(0, 1);
+
   return (
     <article className={`project-card accent-${project.accent}${expanded ? ' project-card-expanded' : ''}`}>
       <div className="project-card-head">
@@ -34,6 +40,32 @@ export default function ProjectCard({ project, expanded = false }: { project: Pr
             </a>
           ))}
         </div>
+      )}
+
+      {visibleImages.length > 0 && (
+        <div className={`project-gallery${visibleImages.length === 1 ? ' project-gallery-single' : ''}`}>
+          {visibleImages.map((img, i) => (
+            <button
+              key={img.src}
+              type="button"
+              className="project-gallery-item"
+              onClick={() => setOpenIndex(i)}
+              aria-label={`View larger screenshot: ${img.alt}`}
+            >
+              <img src={img.src} alt={img.alt} loading="lazy" />
+              {expanded && <span className="project-gallery-caption">{img.label}</span>}
+              <span className="project-image-expand" aria-hidden="true">⤢</span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {openIndex !== null && (
+        <Lightbox
+          images={visibleImages.map((img) => ({ src: img.src, alt: img.alt }))}
+          startIndex={openIndex}
+          onClose={() => setOpenIndex(null)}
+        />
       )}
     </article>
   );
