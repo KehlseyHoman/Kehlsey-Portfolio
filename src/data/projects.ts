@@ -2,6 +2,7 @@ import offerwatchDashboard from '../assets/projects/offerwatch-dashboard.jpg';
 import offerwatchStats from '../assets/projects/offerwatch-stats.jpg';
 import offerwatchInterviewPrep from '../assets/projects/offerwatch-interview-prep.jpg';
 import offerwatchStories from '../assets/projects/offerwatch-stories.jpg';
+import fullstackStarterScreenshot from '../assets/projects/react-java-fullstack-starter.jpg';
 
 export interface Project {
   slug: string;
@@ -41,6 +42,24 @@ export const projects: Project[] = [
       { src: offerwatchStats, alt: 'Offerwatch analytics page with interview pipeline funnel and application sources', label: 'Analytics' },
       { src: offerwatchInterviewPrep, alt: 'Offerwatch interview prep page with curated questions and personal notes', label: 'Interview Prep' },
       { src: offerwatchStories, alt: 'Offerwatch behavioral stories page organized by theme', label: 'Stories' },
+    ],
+  },
+  {
+    slug: 'react-java-fullstack-starter',
+    name: 'React + Java Fullstack Starter',
+    tagline: 'A beginner-friendly full-stack starter template, built around a real chore & bill-splitting app.',
+    description:
+      "An open-source starter for developers learning React and Spring Boot together: working CRUD out of the box (add, view, and check off chores against an H2 database), then a guided 10-step roadmap that walks through adding a real Person entity, a Bill model, an 'who owes whom' calculation, auth, and deployment, each step introducing a new concept roughly easiest to hardest. Built with intentional gaps rather than as a finished app, so the person using it is writing real code from the first feature onward.",
+    role: 'Creator (open-source teaching resource)',
+    stack: ['React', 'JavaScript', 'Spring Boot', 'Java', 'H2'],
+    statLabel: 'Full-stack coverage',
+    statValue: 80,
+    links: [{ label: 'GitHub', url: 'https://github.com/KehlseyHoman/react-java-fullstack-starter' }],
+    accent: 'lavender',
+    kind: 'app',
+    status: 'Starter template · open-source',
+    images: [
+      { src: fullstackStarterScreenshot, alt: 'The Chore Board UI: a corkboard-style app with pinned chore cards, each showing an assignee and a checkbox, plus a form to add and pin new chores', label: 'Chore Board' },
     ],
   },
   {
