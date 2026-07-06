@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Project } from '../../data/projects';
 import Lightbox from '../Lightbox/Lightbox';
+import { ExternalLinkIcon, ExpandIcon } from '../Icons/Icons';
 import './ProjectCard.css';
 
 export default function ProjectCard({ project, expanded = false }: { project: Project; expanded?: boolean }) {
@@ -36,7 +37,7 @@ export default function ProjectCard({ project, expanded = false }: { project: Pr
         <div className="project-links">
           {project.links.map((l) => (
             <a key={l.label} href={l.url} target="_blank" rel="noreferrer">
-              {l.label} ↗
+              {l.label} <ExternalLinkIcon />
             </a>
           ))}
         </div>
@@ -54,7 +55,7 @@ export default function ProjectCard({ project, expanded = false }: { project: Pr
             >
               <img src={img.src} alt={img.alt} loading="lazy" />
               {expanded && <span className="project-gallery-caption">{img.label}</span>}
-              <span className="project-image-expand" aria-hidden="true">⤢</span>
+              <span className="project-image-expand" aria-hidden="true"><ExpandIcon size={12} /></span>
             </button>
           ))}
         </div>

@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '../../components/Icons/Icons';
 import './Contact.css';
 
 export default function Contact() {
@@ -42,8 +43,8 @@ export default function Contact() {
           <h2>Direct links</h2>
           <ul>
             <li><a href="mailto:kehlseyh@gmail.com">kehlseyh@gmail.com</a></li>
-            <li><a href="https://www.linkedin.com/in/kehlsey-homan-55068b159/" target="_blank" rel="noreferrer">LinkedIn ↗</a></li>
-            <li><a href="https://github.com/KehlseyHoman" target="_blank" rel="noreferrer">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/kehlsey-homan-55068b159/" target="_blank" rel="noreferrer">LinkedIn <ExternalLinkIcon /></a></li>
+            <li><a href="https://github.com/KehlseyHoman" target="_blank" rel="noreferrer">GitHub <ExternalLinkIcon /></a></li>
           </ul>
           <p className="contact-location">Detroit, MI</p>
         </aside>
