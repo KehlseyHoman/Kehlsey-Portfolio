@@ -3,6 +3,7 @@ import offerwatchStats from '../assets/projects/offerwatch-stats.jpg';
 import offerwatchInterviewPrep from '../assets/projects/offerwatch-interview-prep.jpg';
 import offerwatchStories from '../assets/projects/offerwatch-stories.jpg';
 import fullstackStarterScreenshot from '../assets/projects/react-java-fullstack-starter.jpg';
+import portfolioTemplateScreenshot from '../assets/projects/portfolio-template-home.jpg';
 
 export interface Project {
   slug: string;
@@ -42,6 +43,27 @@ export const projects: Project[] = [
       { src: offerwatchStats, alt: 'Offerwatch analytics page with interview pipeline funnel and application sources', label: 'Analytics' },
       { src: offerwatchInterviewPrep, alt: 'Offerwatch interview prep page with curated questions and personal notes', label: 'Interview Prep' },
       { src: offerwatchStories, alt: 'Offerwatch behavioral stories page organized by theme', label: 'Stories' },
+    ],
+  },
+  {
+    slug: 'portfolio-website-template',
+    name: 'Portfolio Website Template',
+    tagline: 'An open-source, ready-to-customize portfolio site, extracted from my own.',
+    description:
+      "A production-ready portfolio template pulled directly from this site: React, TypeScript, and Vite, deployable to Netlify in minutes. Ships with a working contact form (Netlify Forms, no backend needed), light/dark mode, an interactive tech-stack explorer, a career timeline, and SEO basics (meta tags, sitemap, robots.txt, JSON-LD) already wired in. Every color is a CSS variable, and every customization point is commented and TODO'd, so someone can fork it and have their own site personalized same-day.",
+    role: 'Creator (open-source template, extracted from my personal site)',
+    stack: ['React', 'TypeScript', 'Vite', 'React Router', 'Netlify'],
+    statLabel: 'Ready to customize',
+    statValue: 90,
+    links: [
+      { label: 'GitHub', url: 'https://github.com/KehlseyHoman/portfolio-website-template' },
+      { label: 'Live demo', url: 'https://kehlseyhoman.com' },
+    ],
+    accent: 'pink',
+    kind: 'app',
+    status: 'Open-source template',
+    images: [
+      { src: portfolioTemplateScreenshot, alt: 'Portfolio template homepage with placeholder name, hero headline, and a stats strip', label: 'Home' },
     ],
   },
   {
