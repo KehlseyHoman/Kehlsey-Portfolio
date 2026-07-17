@@ -4,6 +4,8 @@ import offerwatchInterviewPrep from '../assets/projects/offerwatch-interview-pre
 import offerwatchStories from '../assets/projects/offerwatch-stories.jpg';
 import fullstackStarterScreenshot from '../assets/projects/react-java-fullstack-starter.jpg';
 import portfolioTemplateScreenshot from '../assets/projects/portfolio-template-home.jpg';
+import kitchenDesignsByWendyHome from '../assets/projects/kitchen-designs-by-wendy-home.jpg';
+import twinBayStoneworksHome from '../assets/projects/twin-bay-stoneworks-home.jpg';
 
 export interface Project {
   slug: string;
@@ -104,27 +106,33 @@ export const projects: Project[] = [
     name: 'Kitchen Designs by Wendy',
     tagline: 'Marketing site for a kitchen design business.',
     description:
-      "A production website built and deployed for a small business client, handling everything from design and DNS configuration to performance optimization and ongoing maintenance.",
+      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, redesigning the visual system in the process. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance.",
     role: 'Freelance frontend developer',
-    stack: ['WordPress', 'Cloudflare', 'AWS Lightsail'],
+    stack: ['React', 'TypeScript', 'Vite', 'Netlify', 'Cloudflare'],
     statLabel: 'Client site',
     statValue: 100,
     links: [{ label: 'Visit site', url: 'https://www.kitchendesignsbywendy.com/' }],
     accent: 'pink',
     kind: 'client',
+    images: [
+      { src: kitchenDesignsByWendyHome, alt: 'Kitchen Designs by Wendy homepage hero with a custom kitchen photo and headline', label: 'Home' },
+    ],
   },
   {
     slug: 'twin-bay-stoneworks',
     name: 'Twin Bay Stoneworks',
     tagline: 'Marketing site for a stoneworks and masonry business.',
     description:
-      "A production website built and deployed for a small business client, handling everything from design and DNS configuration to performance optimization and ongoing maintenance.",
+      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, with a redesign built around the fabricator's own material and craft. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance.",
     role: 'Freelance frontend developer',
-    stack: ['WordPress', 'Cloudflare', 'AWS Lightsail'],
+    stack: ['React', 'TypeScript', 'Vite', 'Netlify', 'Cloudflare'],
     statLabel: 'Client site',
     statValue: 100,
     links: [{ label: 'Visit site', url: 'https://www.twinbaystoneworksllc.com/' }],
     accent: 'teal',
     kind: 'client',
+    images: [
+      { src: twinBayStoneworksHome, alt: 'Twin Bay Stoneworks homepage hero with a kitchen photo and headline', label: 'Home' },
+    ],
   },
 ];
