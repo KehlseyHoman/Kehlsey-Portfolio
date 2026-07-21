@@ -1,0 +1,83 @@
+.personal-glimpse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.personal-slideshow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.personal-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  scrollbar-width: none;
+  aspect-ratio: 4 / 5;
+}
+
+.personal-track::-webkit-scrollbar {
+  display: none;
+}
+
+.personal-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.personal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.personal-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.personal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.personal-dot-active {
+  background: var(--pink-deep);
+  transform: scale(1.3);
+}
+
+.personal-text h2 {
+  font-size: 1.5rem;
+  margin: 4px 0 14px;
+}
+
+.personal-text p:not(.eyebrow) {
+  font-size: 0.98rem;
+  max-width: 420px;
+}
+
+@media (max-width: 720px) {
+  .personal-glimpse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

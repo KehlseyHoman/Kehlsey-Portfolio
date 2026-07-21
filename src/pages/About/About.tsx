@@ -1,6 +1,8 @@
 import profileImg from '../../assets/kehlsey-profile.jpg';
 import Timeline from '../../components/Timeline/Timeline';
 import Highlights from '../../components/Highlights/Highlights';
+import ApiHighlights from '../../components/ApiHighlights/ApiHighlights';
+import PersonalGlimpse from '../../components/PersonalGlimpse/PersonalGlimpse';
 import './About.css';
 
 export default function About() {
@@ -41,12 +43,6 @@ export default function About() {
           building and deploying production sites for small business clients, and
           I hold a B.S. in Computer Science from Grand Valley State University.
         </p>
-        <p>
-          Outside of work I'm usually deep in a video game, a fantasy novel, or
-          whatever my husband and I are currently playing together (Halo's a
-          longtime favorite). I've got a small indoor jungle going and two dogs who
-          supervise most of my debugging sessions.
-        </p>
       </div>
 
       <div className="about-stack">
@@ -64,7 +60,11 @@ export default function About() {
 
       <Highlights />
 
+      <ApiHighlights />
+
       <Timeline />
+
+      <PersonalGlimpse />
     </section>
   );
 }

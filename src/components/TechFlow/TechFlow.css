@@ -43,29 +43,56 @@
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
-.tech-pill:hover {
-  transform: translateY(-2px);
-}
-
-.accent-pink.tech-pill:hover,
 .accent-pink.tech-pill-selected {
   background: var(--pink);
   border-color: var(--pink-deep);
   color: #fff;
 }
 
-.accent-lavender.tech-pill:hover,
 .accent-lavender.tech-pill-selected {
   background: var(--lavender);
   border-color: var(--lavender-deep);
   color: #fff;
 }
 
-.accent-teal.tech-pill:hover,
 .accent-teal.tech-pill-selected {
   background: var(--teal);
   border-color: var(--teal-deep);
   color: #fff;
+}
+
+/* Hover-only affordances (lift, color preview, tooltip) are scoped to
+   devices with real hover + a precise pointer (i.e. a mouse). Touch devices
+   fake a "hover" state on tap, which made these stick/glitch after tapping -
+   tapping already reveals the full description in the detail panel anyway,
+   so the tooltip isn't needed there. */
+@media (hover: hover) and (pointer: fine) {
+  .tech-pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .accent-pink.tech-pill:hover {
+    background: var(--pink);
+    border-color: var(--pink-deep);
+    color: #fff;
+  }
+
+  .accent-lavender.tech-pill:hover {
+    background: var(--lavender);
+    border-color: var(--lavender-deep);
+    color: #fff;
+  }
+
+  .accent-teal.tech-pill:hover {
+    background: var(--teal);
+    border-color: var(--teal-deep);
+    color: #fff;
+  }
+
+  .tech-pill:hover .tech-pill-note {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .tech-pill-note {
@@ -102,7 +129,6 @@
   border-top-color: var(--tooltip-bg);
 }
 
-.tech-pill:hover .tech-pill-note,
 .tech-pill:focus-visible .tech-pill-note {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
