@@ -3,7 +3,6 @@ import { projects } from '../../data/projects';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import TechFlow from '../../components/TechFlow/TechFlow';
 import ImpactStrip from '../../components/ImpactStrip/ImpactStrip';
-import profileImg from '../../assets/kehlsey-profile.jpg';
 import './Home.css';
 
 export default function Home() {
@@ -13,26 +12,26 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container hero-inner">
-          <img src={profileImg} alt="Portrait of Kehlsey Homan" className="hero-photo" />
-
-          <div className="hero-text">
-            <p className="eyebrow">Full-stack software engineer</p>
-            <h1 className="hero-title">
-              Frontend-focused, <span className="hero-highlight">full-stack capable</span>.
-            </h1>
-            <p className="hero-sub">
-              React, Angular, TypeScript, and Spring Boot. 7+ years building production
-              applications at enterprise scale. Based in the Detroit area, currently
-              looking for my next role.
-            </p>
-            <div className="hero-actions">
-              <Link to="/projects" className="btn btn-primary">See my work</Link>
-              <Link to="/contact" className="btn btn-secondary">Get in touch</Link>
-            </div>
-
-            <ImpactStrip />
+          <p className="eyebrow">Full-stack software engineer</p>
+          <h1 className="hero-title">
+            Frontend-focused, <span className="hero-highlight">full-stack capable</span>.
+          </h1>
+          <p className="hero-sub">
+            React, Angular, TypeScript, and Spring Boot. 7+ years building production
+            applications at enterprise scale. Currently looking for Senior Frontend or
+            Full-Stack Engineer roles, remote or based in Metro Detroit.
+          </p>
+          <div className="hero-actions">
+            <Link to="/projects" className="btn btn-primary">See my work</Link>
+            <Link to="/contact" className="btn btn-secondary">Get in touch</Link>
           </div>
+
+          <ImpactStrip />
         </div>
+      </section>
+
+      <section className="container tech-section">
+        <TechFlow />
       </section>
 
       <section className="container featured">
@@ -49,8 +48,6 @@ export default function Home() {
           I've also designed and deployed production websites for small business
           clients. <Link to="/projects">See client work →</Link>
         </p>
-
-        <TechFlow />
       </section>
     </>
   );

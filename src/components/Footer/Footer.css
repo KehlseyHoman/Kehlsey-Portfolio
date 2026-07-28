@@ -21,16 +21,17 @@
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
 }
 
 .footer-links a {
-  font-size: 0.85rem;
-  font-weight: 500;
+  display: inline-flex;
   color: var(--ink-soft);
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .footer-links a:hover {
   color: var(--pink-deep);
+  transform: translateY(-2px);
 }
