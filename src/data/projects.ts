@@ -21,6 +21,12 @@ export interface Project {
   kind: 'app' | 'client';
   status?: string; // optional badge, e.g. "Learning project · In progress"
   images?: { src: string; alt: string; label: string }[]; // images[0] is the card's hero image
+  caseStudy?: {
+    problem: string;
+    decisions: string;
+    challenge: string;
+    whatsNext: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -40,6 +46,16 @@ export const projects: Project[] = [
     ],
     accent: 'teal',
     kind: 'app',
+    caseStudy: {
+      problem:
+        "I was tracking applications in Excel, but it couldn't capture the details that actually mattered - what questions came up in an interview, where I'd found a posting, how my pipeline was trending over time. The alternative was paying for someone else's tracker and hoping it had the specific features I wanted. Offerwatch is the dashboard I actually wanted: every application, its questions, its source, and the stats across all of it, in one place.",
+      decisions:
+        "Angular and Spring Boot, since that's the stack I already work in daily at GM - building Offerwatch in the same tools let me own the entire request-response cycle end to end, not just the frontend half I'm usually responsible for on a team. Supabase gets me a managed, production-grade Postgres instance without babysitting a database server myself, while row-level security still lives at the API layer via Spring Security, so the data-access rules are enforced in code I control. Going freemium with Stripe billing planned (not built yet) let me ship the core tracking loop first and prove people would actually use it before spending time on payments.",
+      challenge:
+        "Keeping two layers of access control in sync: Supabase's row-level security and Spring Security's method-level checks both need to agree on who can see what. Reasoning through every edge case where those two could drift apart has been the trickiest part, and proving it holds - writing tests that a user genuinely can't reach another user's applications, not just that the UI hides them - is one of the last things I need to finish before opening signups to real users.",
+      whatsNext:
+        "Finishing that access-control test suite is the top priority before I open signups, followed by Stripe billing for the paid tier and refining the analytics dashboard now that I have enough of my own usage data to see what's actually useful. I also need to rename the app - a quick search turned up an existing product already called Offerwatch.",
+    },
     images: [
       { src: offerwatchDashboard, alt: 'Offerwatch dashboard showing job applications grouped by status', label: 'Dashboard' },
       { src: offerwatchStats, alt: 'Offerwatch analytics page with interview pipeline funnel and application sources', label: 'Analytics' },

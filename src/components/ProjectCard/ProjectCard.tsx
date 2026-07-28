@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import type { Project } from '../../data/projects';
 import Lightbox from '../Lightbox/Lightbox';
-import { ExternalLinkIcon, ExpandIcon } from '../Icons/Icons';
+import { ExternalLinkIcon, ExpandIcon, ChevronDownIcon } from '../Icons/Icons';
 import './ProjectCard.css';
 
 export default function ProjectCard({ project, expanded = false }: { project: Project; expanded?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showCaseStudy, setShowCaseStudy] = useState(false);
   const images = project.images ?? [];
   const visibleImages = expanded ? images : images.slice(0, 1);
 
@@ -40,6 +41,43 @@ export default function ProjectCard({ project, expanded = false }: { project: Pr
               {l.label} <ExternalLinkIcon />
             </a>
           ))}
+        </div>
+      )}
+
+      {project.caseStudy && (
+        <div className="project-case-study-wrap">
+          <button
+            type="button"
+            className="project-details-toggle"
+            onClick={() => setShowCaseStudy((v) => !v)}
+            aria-expanded={showCaseStudy}
+          >
+            {showCaseStudy ? 'Hide details' : 'More details'}
+            <span className={`toggle-chevron${showCaseStudy ? ' toggle-chevron-open' : ''}`}>
+              <ChevronDownIcon size={12} />
+            </span>
+          </button>
+
+          {showCaseStudy && (
+            <div className="project-case-study">
+              <div className="case-study-block">
+                <h4>The problem</h4>
+                <p>{project.caseStudy.problem}</p>
+              </div>
+              <div className="case-study-block">
+                <h4>Key decisions</h4>
+                <p>{project.caseStudy.decisions}</p>
+              </div>
+              <div className="case-study-block">
+                <h4>A hard part</h4>
+                <p>{project.caseStudy.challenge}</p>
+              </div>
+              <div className="case-study-block">
+                <h4>What's next</h4>
+                <p>{project.caseStudy.whatsNext}</p>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
