@@ -44,7 +44,7 @@ export default function ProjectCard({ project, expanded = false }: { project: Pr
         </div>
       )}
 
-      {project.caseStudy && (
+      {expanded && project.caseStudy && (
         <div className="project-case-study-wrap">
           <button
             type="button"
