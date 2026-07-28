@@ -1,5 +1,5 @@
 .hero {
-  padding: 96px 0 72px;
+  padding: 96px 0 56px;
   position: relative;
   overflow: hidden;
 }
@@ -76,7 +76,7 @@
 }
 
 .tech-section {
-  padding: 0 0 48px;
+  padding: 0 0 64px;
 }
 
 .featured {
