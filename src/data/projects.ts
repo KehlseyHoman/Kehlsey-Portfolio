@@ -122,7 +122,7 @@ export const projects: Project[] = [
     name: 'Kitchen Designs by Wendy',
     tagline: 'Marketing site for a kitchen design business.',
     description:
-      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, redesigning the visual system in the process. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance.",
+      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, redesigning the visual system in the process. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance. I'm also her go-to for general tech support - remoting in to troubleshoot software issues, fix whatever is acting up on her computer, and set up cloud storage.",
     role: 'Freelance frontend developer',
     stack: ['React', 'TypeScript', 'Vite', 'Netlify', 'Cloudflare'],
     statLabel: 'Client site',
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     name: 'Twin Bay Stoneworks',
     tagline: 'Marketing site for a stoneworks and masonry business.',
     description:
-      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, with a redesign built around the fabricator's own material and craft. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance.",
+      "A production website built and deployed for a small business client. Originally built on WordPress, I migrated it to a custom React + TypeScript site for better performance and a lower-maintenance stack, with a redesign built around the fabricator's own material and craft. Handles everything from design and DNS configuration to performance optimization and ongoing maintenance. I'm also their go-to for general tech support - remoting in to troubleshoot software issues and fix whatever is acting up.",
     role: 'Freelance frontend developer',
     stack: ['React', 'TypeScript', 'Vite', 'Netlify', 'Cloudflare'],
     statLabel: 'Client site',
